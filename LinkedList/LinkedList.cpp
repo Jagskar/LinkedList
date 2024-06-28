@@ -60,3 +60,31 @@ void LinkedList::append(int value)
 
 	length++;
 }
+
+void LinkedList::deleteLast()
+{
+	if (length == 0)
+		return;
+	if (length == 1)
+	{
+		head = nullptr;
+		tail = nullptr;
+	}
+	else
+	{
+		Node* temp = head;
+		Node* previous = head;
+
+		while (temp->next)
+		{
+			previous = temp;
+			temp = temp->next;
+		}
+
+		tail = previous;
+		tail->next = nullptr;
+		delete temp;
+	}
+
+	length--;
+}

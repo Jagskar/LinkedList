@@ -18,4 +18,5 @@ public:
 	Node* getTail();
 	int getLength();
 	void append(int value);
+	void deleteLast();
 };
