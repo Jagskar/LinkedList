@@ -47,9 +47,16 @@ void LinkedList::printList()
 void LinkedList::append(int value)
 {
 	Node* newNode = new Node(value);
-	if (head->next == nullptr)
-		head->next = newNode;
+	if (length == 0)
+	{
+		head = newNode;
+		tail = newNode;
+	}
+	else
+	{
+		tail->next = newNode;
+		tail = newNode;
+	}
 
-	tail->next = newNode;
 	length++;
 }
